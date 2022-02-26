@@ -6,7 +6,7 @@ RUN apt-get install -y libssl-dev
 RUN apt-get install -y libgssapi-krb5-2
 RUN apt-get install -y ca-certificates
 RUN apt-get install -y git git-lfs curl perl
-ADD fastgithub_linux-x64/* /fastgithub_linux-x64
+COPY . /
 RUN chmod -R +x /fastgithub_linux-x64
 ADD posix/* /usr/local/bin/
 
