@@ -1,11 +1,13 @@
-FROM alpine:3.12
-RUN apk add --no-cache ca-certificates git git-lfs openssh curl perl aws-cli sudo
-
+FROM ubuntu:18.04
+RUN sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
+RUN apt-get clean
+RUN apt-get update
+RUN apt-get install -y libssl-dev
+RUN apt-get install -y libgssapi-krb5-2
+RUN apt-get install -y ca-certificates
+RUN apt-get install git git-lfs openssh curl perl aws-cli
+COPY . /
+RUN chmod -R +x /fastgithub_linux-x64
 ADD posix/* /usr/local/bin/
-
-# RUN adduser -g Drone -s /bin/sh -D -u 1000 drone
-# RUN echo 'drone ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/drone
-# USER drone:drone
-# RUN chmod -R 777 /home/drone
 
 ENTRYPOINT ["/usr/local/bin/clone"]

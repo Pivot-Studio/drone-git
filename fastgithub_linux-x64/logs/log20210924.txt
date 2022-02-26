@@ -1,0 +1,20 @@
+2021-09-24T14:31:33.2691845+08:00 [WRN]
+FastGithub.HttpServer.CertService
+请根据具体linux发行版手动安装CA证书cacert/fastgithub.cer
+
+2021-09-24T14:31:33.7893513+08:00 [INF]
+FastGithub.HttpServer
+已监听http://127.0.0.1:38457，http代理服务启动完成
+
+2021-09-24T14:31:33.8570934+08:00 [INF]
+FastGithub.AppHostedService
+FastGithub启动完成，当前版本为v2.0.0，访问 https://github.com/dotnetcore/fastgithub 关注新版本
+
+2021-09-24T14:31:34.8683708+08:00 [WRN]
+FastGithub.AppHostedService
+请设置系统自动代理为http://127.0.0.1:38457，或手动代理http/https为127.0.0.1:38457
+
+2021-09-24T14:32:13.7289098+08:00 [INF]
+FastGithub.AppHostedService
+FastGithub已停止运行
+
